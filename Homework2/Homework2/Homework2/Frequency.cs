@@ -68,15 +68,12 @@ namespace Homework2
 
             for (int i = 0; i < numCols; i++)
             {
-                Console.WriteLine(dataSet[0][i]);
                 if (dataSet[0][i] == "Ambitious (0-5)")
                 {
-                    Console.WriteLine(dataSet[0].Length);
                     for (int j=1; j < numRows; j++)
                     {
                         try
                         {
-                            Console.WriteLine(dataSet[j][i]);
                             absoluteFreq.Add(dataSet[j][i],1);
                         }
                         catch (ArgumentException)
@@ -91,7 +88,33 @@ namespace Homework2
             {
                 Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
             }
-            Console.WriteLine("kek");
+            Console.WriteLine("\n");
+
+            //relative frequency
+            Dictionary<string, double> relativeFreq = new Dictionary<string, double>();
+            foreach (KeyValuePair<string, int> entry in absoluteFreq)
+            {
+                relativeFreq.Add(entry.Key, (double)entry.Value/(numRows-1));
+            }
+
+            foreach (var kvp in relativeFreq)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            }
+            Console.WriteLine("\n");
+
+            //percentage frequency
+            Dictionary<string, double> percFreq = new Dictionary<string, double>();
+            foreach (KeyValuePair<string, double> entry in relativeFreq)
+            {
+                percFreq.Add(entry.Key, (entry.Value*100));
+            }
+
+            foreach (var kvp in percFreq)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            }
+
         }
 
     }
