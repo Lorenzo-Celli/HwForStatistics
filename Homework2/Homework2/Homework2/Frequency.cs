@@ -15,13 +15,13 @@ namespace Homework2
         {
             string filePath = "C:\\Users\\Lorenzo\\Downloads\\ProfessionalLife.tsv";
 
-            string[][] matrix = CsvToMatrix(filePath);
+            string[][] matrix = TsvToMatrix(filePath);
 
             QuantitativeDiscreteFreq(matrix);
 
         }
 
-        static string[][] CsvToMatrix(string filePath)
+        static string[][] TsvToMatrix(string filePath)
         {
 
                     //read TSV rows
