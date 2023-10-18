@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-class Program
+class UniformDistribution
 {
-	static void Main()
+	public void UniformDistrib()
 	{
-		int N = 1000; // Number of random variates
+		int N = 100000; // Number of random variates
 		int k = 10;   // Number of intervals
 
 		Random random = new Random();
@@ -27,14 +27,12 @@ class Program
 			intervalCounts[intervalIndex]++;
 		}
 
-		// Display the distribution
-		for (int i = 0; i < k; i++)
-		{
-			double intervalStart = i / (double)k;
-			double intervalEnd = (i + 1) / (double)k;
-			int count = intervalCounts[i];
-
-			Console.WriteLine($"Interval [{intervalStart:F2}, {intervalEnd:F2}): Count = {count}");
-		}
-	}
+        for (int i = 0; i < k; i++)
+        {
+            double lowerBound = i / (double)k;
+            double upperBound = (i + 1) / (double)k;
+            int count = intervalCounts[i];
+            Console.WriteLine($"[{lowerBound:F2} - {upperBound:F2}): {count}");
+        }
+    }
 }

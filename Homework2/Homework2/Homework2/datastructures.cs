@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-class Program
+class DataStructures
 {
-    static void Main()
+    static void AllDatastructures()
     {
         // Array
         int[] array = { 1, 2, 3, 4, 5 };
