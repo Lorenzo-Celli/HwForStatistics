@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JoinDistribution.cs" />
     <Compile Include="datastructures.cs" />
     <Compile Include="Frequency.cs" />
     <Compile Include="Executable.cs" />

@@ -13,12 +13,17 @@ namespace Homework2
     {
         static void Main(string[] args)
         {
-            string filePath = "C:\\Users\\Lorenzo\\Downloads\\ProfessionalLife.tsv";
+
 
             Frequency freq = new Frequency();
+
+
+            string filePath = "C:\\Users\\Lorenzo\\Downloads\\ProfessionalLife.tsv";
+            string[][] matrix = freq.TsvToMatrix(filePath);
+
             UniformDistribution unif = new UniformDistribution();
+            JoinDistribution join = new JoinDistribution(matrix,matrix.GetLength(0),matrix[0].Length);
             
-            //string[][] matrix = freq.TsvToMatrix(filePath);
 
             //freq.QuantitativeDiscreteFreq(matrix);
 
@@ -28,6 +33,7 @@ namespace Homework2
 
             unif.UniformDistrib();
 
+            join.printDistribution();
 
         }
 
